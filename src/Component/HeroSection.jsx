@@ -20,9 +20,9 @@ const HeroSection = () => {
 
     {/* Button */}
    <button className="inline-flex bg-[#B88E2F] hover:bg-[#a07a27] transition-colors w-full sm:w-[222px] h-[56px] sm:h-[74px] items-center justify-center mt-6 sm:mt-[48px] font-bold text-white text-sm sm:text-[16px] uppercase tracking-wider"
-    > <a  >
+    >
       BUY NOW
-    </a></button>
+    </button>
 
   </div>
 </div>
