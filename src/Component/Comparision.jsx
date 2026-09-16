@@ -3,12 +3,11 @@ import {
   Star, 
   ChevronDown, 
   ShoppingCart, 
-  Plus, 
+   
   X, 
-  Check, 
-  ArrowRight,
+
   Sparkles,
-  Info
+  
 } from 'lucide-react';
 import Benefitsection from './Benefitsection';
 import logo from '../assets/Project logo.png'

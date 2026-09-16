@@ -1,4 +1,4 @@
-import img1 from '../assets/Mask group (1).png';
+import img1 from '../assets//Mask Group (2).png';
 import img2 from '../assets/Image-living room.png';
 import img3 from '../assets/Mask Group (2).png';
 

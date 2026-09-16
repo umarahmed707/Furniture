@@ -5,11 +5,6 @@ import {
   ShoppingBag, 
   ArrowLeft, 
   CheckCircle2, 
-
-  ShieldCheck, 
-  Trophy, 
-  Truck, 
-  Headphones,
   ChevronDown,
   
 } from 'lucide-react';
