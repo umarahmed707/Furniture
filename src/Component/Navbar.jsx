@@ -4,6 +4,7 @@ import { FaUser } from 'react-icons/fa';
 import { IoIosSearch, IoMdHeartEmpty } from 'react-icons/io';
 import { MdOutlineShoppingCart } from 'react-icons/md';
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi'; 
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -25,13 +26,12 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Navigation Links */}
-        <ul className="hidden md:flex items-center gap-6 lg:gap-10 font-medium text-base">
-          <li className="hover:text-[#B88E2F] cursor-pointer transition-colors">Home</li>
-          <li className="hover:text-[#B88E2F] cursor-pointer transition-colors">Shop</li>
-          <li className="hover:text-[#B88E2F] cursor-pointer transition-colors">About</li>
-          <li className="hover:text-[#B88E2F] cursor-pointer transition-colors">Contact</li>
-        </ul>
-
+      <ul className="hidden md:flex items-center gap-6 lg:gap-10 font-medium text-base">
+         <li> <Link to="/" className="hover:text-[#B88E2F] cursor-pointer transition-colors" > Home </Link> </li>
+          <li> <Link to="/shop" className="hover:text-[#B88E2F] cursor-pointer transition-colors" > Shop </Link> </li>
+           <li> <Link to="/about" className="hover:text-[#B88E2F] cursor-pointer transition-colors" > About </Link> </li> 
+       <Link to="/contact" className="hover:text-[#B88E2F] cursor-pointer transition-colors" > Contact </Link>
+      </ul>
         {/* Desktop Icons */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <FaUser className="w-5 h-5 lg:w-6 lg:h-6 cursor-pointer hover:text-[#B88E2F] transition-colors" />

@@ -19,7 +19,7 @@ const FuniroSection = () => {
           Share your setup with
         </p>
 
-        <h5 className="font-bold text-2xl sm:text-3xl lg:text-[40px] mt-1 lg:mt-[-10px]">
+        <h5 className="font-bold text-2xl sm:text-3xl lg:text-[40px] mt-1 lg:mt-[-5px]">
           #FuniroFurniture
         </h5>
       </div>

@@ -101,3 +101,33 @@ body {
         font-size: 16px;
         font-weight: 600;
     }
+
+  .shopheader {
+  width: 100%;
+  min-height: 316px;
+
+  background-image: url("./assets/Rectangle 1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .shopheader {
+    min-height: 250px;
+    background-position: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .shopheader {
+    min-height: 200px;
+    background-position: center;
+  }
+}
