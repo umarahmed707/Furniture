@@ -4,8 +4,7 @@ import {
 
   ShoppingBag, 
 
-  X, 
- 
+
 } from 'lucide-react';
 import Benefitsection from './Benefitsection';
 import logo from '../assets/Project logo.png'
