@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaStar, FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import products from './Data/product';
-import img2 from '../assets/Mask group (1).png';
+import img2 from '../assets/sofa.png';
 import img1 from '../assets/Group 106.png';
 import initialProducts from './Data/product';
 import ProductCard from './ProductCard';
@@ -332,7 +332,8 @@ const handleAddToCart = () => {
             {/* Compare */}
             <button
               className="w-[215px] h-[64px] border border-black rounded-[15px] text-[20px] hover:bg-black hover:text-white transition"
-            >
+           onClick={()=>navigate('/comparison')}
+           >
               + Compare
             </button>
 
@@ -385,105 +386,102 @@ const handleAddToCart = () => {
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="border-t border-[#D9D9D9] mt-12 pt-10">
+ <div className="border-t border-[#D9D9D9] mt-8 md:mt-12 pt-6 md:pt-10 px-4 md:px-8">
 
-        <div className="flex justify-center gap-12 text-[24px]">
+  {/* Tabs Header */}
+  <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 text-[16px] sm:text-[20px] md:text-[24px]">
 
-          <button
-            onClick={() => setActiveTab('description')}
-            className={
-              activeTab === 'description'
-                ? 'text-black font-medium'
-                : 'text-[#9F9F9F]'
-            }
-          >
-            Description
-          </button>
+    <button
+      onClick={() => setActiveTab('description')}
+      className={`transition-colors duration-200 ${
+        activeTab === 'description'
+          ? 'text-black font-medium'
+          : 'text-[#9F9F9F] hover:text-black'
+      }`}
+    >
+      Description
+    </button>
 
-          <button
-            onClick={() => setActiveTab('info')}
-            className={
-              activeTab === 'info'
-                ? 'text-black font-medium'
-                : 'text-[#9F9F9F]'
-            }
-          >
-            Additional Information
-          </button>
+    <button
+      onClick={() => setActiveTab('info')}
+      className={`transition-colors duration-200 ${
+        activeTab === 'info'
+          ? 'text-black font-medium'
+          : 'text-[#9F9F9F] hover:text-black'
+      }`}
+    >
+      Additional Information
+    </button>
 
-          <button
-            onClick={() => setActiveTab('reviews')}
-            className={
-              activeTab === 'reviews'
-                ? 'text-black font-medium'
-                : 'text-[#9F9F9F]'
-            }
-          >
-            Reviews [{product.reviewsCount || 5}]
-          </button>
+    <button
+      onClick={() => setActiveTab('reviews')}
+      className={`transition-colors duration-200 ${
+        activeTab === 'reviews'
+          ? 'text-black font-medium'
+          : 'text-[#9F9F9F] hover:text-black'
+      }`}
+    >
+      Reviews [{product?.reviewsCount || 5}]
+    </button>
 
-        </div>
+  </div>
 
-        {/* Tab Content */}
-        <div className="max-w-[1026px] mx-auto text-[#9F9F9F] text-[16px] leading-[150%] mt-8 space-y-6">
+  {/* Tab Content */}
+  <div className="max-w-[1026px] mx-auto text-[#9F9F9F] text-[14px] sm:text-[16px] leading-[160%] md:leading-[150%] mt-6 md:mt-8 space-y-4 md:space-y-6">
 
-          {activeTab === 'description' && (
-            <div>
-  <p>
-    {product.description ||
-      "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road."}
-  </p>
-<br />
-  <p>
-    Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
-  </p>
-</div>
-          )}
-
-          {activeTab === 'info' && (
-            <div>
-              <p>
-                Category: {product.category || 'Sofas'}
-              </p>
-
-              <p>
-                SKU: {product.sku || 'SS001'}
-              </p>
-            </div>
-          )}
-
-          {activeTab === 'reviews' && (
-            <p>
-              {product.reviewsCount || 5} Customer Reviews
-            </p>
-          )}
-
-        </div>
-
-        {/* Bottom Images */}
-        <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-9 pb-16 px-6">
-
-    <div className="flex gap-10">
-      <img src={img1} alt="" />
-      <img src={img2} alt="" className="bg-[#F9F1E7] h-[348px] w-[605px]" />
-    </div>
-          {/* {galleryImages.slice(0, 2).map((img, idx) => (
-            <div
-              key={idx}
-              className="bg-[#FAF4EF] rounded-[10px] h-[348px] flex items-center justify-center p-6"
-            >
-              <img
-                src={img}
-                alt=""
-                className="max-h-full object-contain"
-              />
-            </div>
-          ))} */}
-
-        </div>
-
+    {activeTab === 'description' && (
+      <div className="space-y-4">
+        <p>
+          {product?.description ||
+            "Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road."}
+        </p>
+        <p>
+          Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
+        </p>
       </div>
+    )}
+
+    {activeTab === 'info' && (
+      <div className="space-y-2">
+        <p>
+          <span className="font-semibold text-black">Category:</span> {product?.category || 'Sofas'}
+        </p>
+        <p>
+          <span className="font-semibold text-black">SKU:</span> {product?.sku || 'SS001'}
+        </p>
+      </div>
+    )}
+
+    {activeTab === 'reviews' && (
+      <p className="font-medium text-black">
+        {product?.reviewsCount || 5} Customer Reviews
+      </p>
+    )}
+
+  </div>
+
+  {/* Bottom Gallery Images */}
+  <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-9 pb-10 md:pb-16">
+
+    <div className="bg-[#F9F1E7] rounded-[10px] min-h-[250px] sm:min-h-[300px] md:h-[348px] flex items-center justify-center p-4 overflow-hidden">
+      <img 
+        src={img1} 
+        alt="Product detail 1" 
+        className="max-h-full max-w-full object-contain rounded-[10px]"
+      />
+    </div>
+
+    <div className="bg-[#F9F1E7] rounded-[10px] min-h-[250px] sm:min-h-[300px] md:h-[348px] flex items-center justify-center p-4 overflow-hidden">
+      <img 
+        src={img2} 
+        alt="Product detail 2" 
+        className="max-h-full max-w-full object-contain rounded-[10px]"
+      />
+    </div>
+
+  </div>
+
+</div>
   <h3 className="text-2xl sm:text-3xl md:text-[40px] font-bold text-center my-4 sm:my-6">
         Our Products
       </h3>
